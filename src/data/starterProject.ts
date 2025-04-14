@@ -41,27 +41,4 @@ CONTRACT mycontract : public contract {
 };`),
     new ProjectFile("contract.hpp", "include/", `#include <eosio/eosio.hpp>`),
     new ProjectFile(".gitkeep", "include/", ``),
-//     new ProjectFile("test.js", ``, `// You have access to helper classes listed here: https://greymass.github.io/eosio-core/
-// // Examples: INT8/32/64/128 | UINT8/16/32/64/128 | VarInt | VarUInt | Name
-//
-// describe('contract_test', () => {
-//   it("should fail with bad authorizations", () => {
-//     try {
-//       contract.actions.newuser('alice').apply('bob@active');
-//     } catch (e) {
-//       expect(e.message).to.equal('missing required authority');
-//     }
-//   });
-//
-//   it("should store the new user", () => {
-//     contract.actions.newuser('alice').apply('alice@active');
-//
-//     const users = getTable("users");
-//     expect(users).to.deep.equal({ vaulta_account: contract, is_admin: Int8.from(0) });
-//   });
-// });`),
-    // new ProjectFile("include", "", "", true),
-    // new ProjectFile("contract.hpp", "include", ""),
-    // new ProjectFile("nested", "include", "", true),
-    // new ProjectFile("nested.js", "include/nested", ""),
 ];

@@ -106,7 +106,7 @@
     }
 
     const goToContractInExplorer = () => {
-        window.open(`https://jungle4.eosq.eosnation.io/account/${$contractDeployedTo}`, '_blank');
+        window.open(`https://jungle4.unicove.com/account/${$contractDeployedTo}`, '_blank');
     }
 
     const connectWallet = async () => {

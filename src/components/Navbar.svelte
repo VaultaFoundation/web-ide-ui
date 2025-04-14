@@ -61,7 +61,7 @@
       {#if $saving}
         <figure class="cursor-pointer text-fontColorNavbar text-lg hover:scale-125"><i class="fa fa-solid text-blue-500 fa-save animate-pulse"></i></figure>
       {/if}
-      <a id="info" href="https://docs.eosnetwork.com" target="_blank" class="cursor-pointer text-fontColorNavbar text-lg hover:scale-125"><i class="fa-solid fa-graduation-cap"></i></a>
+      <a id="info" href="https://docs.vaulta.com" target="_blank" class="cursor-pointer text-fontColorNavbar text-lg hover:scale-125"><i class="fa-solid fa-graduation-cap"></i></a>
 <!--      <figure class="cursor-pointer text-fontColorNavbar text-lg hover:scale-125"><i class="fa-solid fa-arrow-down-to-line"></i></figure>-->
 <!--      <figure class="cursor-pointer text-fontColorNavbar text-lg hover:scale-125"><i class="fa-sharp fa-solid fa-share"></i></figure>-->
       <!-- login -->

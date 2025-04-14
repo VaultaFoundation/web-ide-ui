@@ -97,7 +97,7 @@
           {:else}
             <figure on:auxclick={e => closeFileOnMiddleClick(e, id)} on:click={openFile(id)} class="file-bar-item cursor-pointer flex items-center justify-center
             h-full px-4 space-x-1 file text-xs text-fontColor bg-fileBarUnselected opacity-50 hover:bg-codeBg hover:opacity-100">
-              <i class="mr-1.5 fa-thin {getIcon(idToProjectFileName(id))}"></i> {idToProjectFileName(id)}
+              <i class="mr-1.5 fa-solid {getIcon(idToProjectFileName(id))}"></i> {idToProjectFileName(id)}
             </figure>
           {/if}
         {/each}

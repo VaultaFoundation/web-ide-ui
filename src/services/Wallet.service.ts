@@ -8,7 +8,7 @@ import ConsoleService from "./Console.service";
 const webRenderer = new WebRenderer()
 
 const sessionKit = new SessionKit({
-    appName: "EOS WEB IDE",
+    appName: "VAULTA WEB IDE",
     chains: [Chains.EOS, Chains.Jungle4, Chains.KylinTestnet],
     ui: webRenderer,
     walletPlugins: [new WalletPluginAnchor()],

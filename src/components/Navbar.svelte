@@ -50,7 +50,7 @@
         <input id="projectName" class="bg-transparent outline-0 border-0 font-bold text-center max-w-[600px] w-full"
                bind:value="{tempProjectName}" on:blur={changeName} on:keyup={x => x.key === "Enter" ? changeName() : x.key === "Escape" ? resetName() : null} />
       {:else}
-        <div>EOS++&nbsp;&nbsp;/&nbsp;&nbsp;</div>
+        <div>Vaulta IDE&nbsp;&nbsp;/&nbsp;&nbsp;</div>
         <b class="cursor-pointer truncate max-w-[250px]" on:click={selectNameChanger}>{$project.name}</b>
       {/if}
     </div>

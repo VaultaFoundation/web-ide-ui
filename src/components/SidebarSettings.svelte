@@ -50,7 +50,7 @@
 
             <!-- removal of this will break license -->
             <a href="https://eosnetwork.com" target="_blank" rel="noopener">
-                <figure class="mt-5 text-xs opacity-50">Made with <i class="fa-solid fa-heart text-red-500"></i> by <b class="text-blue-500">EOS Network Foundation</b></figure>
+                <figure class="mt-5 text-xs opacity-50">Made with <i class="fa-solid fa-heart text-red-500"></i> by <b class="text-blue-500">Vaulta Foundation</b></figure>
             </a>
         </section>
 

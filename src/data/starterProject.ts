@@ -11,21 +11,21 @@ CONTRACT mycontract : public contract {
 
       // This is a database model definition
       TABLE user {
-         name     eos_account;
+         name     vaulta_account;
          uint8_t  is_admin;
 
          uint64_t primary_key() const { 
-            return eos_account.value; 
+            return vaulta_account.value; 
          }
       };
 
       // This is a table constructor which we will instantiate later
-      using user_table = eosio::multi_index<"users"_n, user>;
+      using user_table = multi_index<"users"_n, user>;
 
       // Every ACTION you define can be called from outside the blockchain
-      ACTION newuser( name eos_account ){
+      ACTION newuser( name vaulta_account ){
          // Only the account calling this can add themselves
-         require_auth(eos_account);
+         require_auth(vaulta_account);
 
          // We're instantiating the user table
          user_table users(get_self(), get_self().value);
@@ -33,7 +33,7 @@ CONTRACT mycontract : public contract {
          // Finally, we're putting that user into the database
          users.emplace(get_self(), [&](auto& row) {
             row = user {
-               .eos_account = eos_account,
+               .vaulta_account = vaulta_account,
                .is_admin = 0
             };
          });
@@ -57,7 +57,7 @@ CONTRACT mycontract : public contract {
 //     contract.actions.newuser('alice').apply('alice@active');
 //
 //     const users = getTable("users");
-//     expect(users).to.deep.equal({ eos_account: contract, is_admin: Int8.from(0) });
+//     expect(users).to.deep.equal({ vaulta_account: contract, is_admin: Int8.from(0) });
 //   });
 // });`),
     // new ProjectFile("include", "", "", true),

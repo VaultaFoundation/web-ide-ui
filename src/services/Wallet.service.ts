@@ -212,7 +212,7 @@ export default class WalletService {
 
         return await session.transact({ actions }).then(x => {
             ConsoleService.prepend(`Interaction success!`);
-            ConsoleService.prepend(`<details><summary>Transaction: <a class="text-fontHighlight" style="color:text-decoration: underline;" href="https://bloks.io/tx/${x.response.transaction_id}" target="_blank">See transaction on explorer</a></summary><pre>${JSON.stringify(x.response, null, 4)}</pre></details>`);
+            ConsoleService.prepend(`<details><summary>Transaction: <a class="text-fontHighlight" style="color:text-decoration: underline;" href="https://unicove.com/transaction/${x.response.transaction_id}" target="_blank">See transaction on explorer</a></summary><pre>${JSON.stringify(x.response, null, 4)}</pre></details>`);
             ConsoleService.prepend('');
 
             return true;

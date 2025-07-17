@@ -17,7 +17,7 @@
             return WalletService.getTableRows(table.name, scope);
         }
 
-        ApiService.getTableData("jungle", $contractDeployedTo, table.name, scope);
+        ApiService.getTableData($selectedNetwork.toLowerCase(), $contractDeployedTo, table.name, scope);
     }
 </script>
 

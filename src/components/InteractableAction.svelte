@@ -26,7 +26,7 @@
             return WalletService.transact(actionData.action, actionData.params);
         }
 
-        ApiService.interact("jungle", $contractDeployedTo, actionData);
+        ApiService.interact($selectedNetwork.toLowerCase(), $contractDeployedTo, actionData);
     }
 </script>
 

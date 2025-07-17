@@ -6,7 +6,7 @@ import {
     saving,
     availableInteractions,
     availableTables,
-    contractDeployedTo, senderAccount
+    contractDeployedTo, senderAccount, selectedNetwork
 } from "../stores";
 import Project from "../models/Project.model";
 import debounce from 'debounce';
@@ -36,6 +36,11 @@ let lastWasm = null;
 let lastAbi = null;
 
 let buildResolver = null;
+
+const checkIfProjectHasCallableContracts = (project:Project) => {
+    // search for [[eosio::call]] in any of the files
+    return project.files.some(file => file.content.includes('[[eosio::call]]') || file.content.includes('eosio::call'));
+}
 
 export default class ApiService {
 
@@ -253,12 +258,17 @@ export default class ApiService {
     }
 
     static deploy(project:Project, contract:string, build:boolean = true){
-        if(!build) ConsoleService.prepend(`Deploying contract to Jungle Testnet...`);
-        else ConsoleService.prepend(`Building and deploying contract to Jungle Testnet...`);
+        let _selectedNetwork = 'jungle';
+        selectedNetwork.update((network:any) => {
+            if(network) _selectedNetwork = network;
+            return network;
+        });
+        if(!build) ConsoleService.prepend(`Deploying contract to ${_selectedNetwork}...`);
+        else ConsoleService.prepend(`Building and deploying contract to ${_selectedNetwork}...`);
 
         if(build) building.set(true);
 
-        ApiService.sendMessage('deploy', {network:'jungle', id:project.id, contract, build});
+        ApiService.sendMessage('deploy', {network:_selectedNetwork.toLowerCase(), id:project.id, contract, build});
         setTimeout(() => deployDebounce(), 20000);
         if(build) setTimeout(() => buildDebounce(), 20000);
     }

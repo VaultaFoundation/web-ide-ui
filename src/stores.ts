@@ -19,7 +19,7 @@ export const contractDeployedTo:Writable<string> = writable("");
 export const availableInteractions:Writable<Array<{name:string, params:Array<{name:string, type:string}>}>> = writable([]);
 export const availableTables:Writable<Array<{name:string}>> = writable([]);
 export const editor:Writable<any> = writable(null);
-export const selectedNetwork:Writable<string> = writable("Jungle Testnet");
+export const selectedNetwork:Writable<string> = writable("Jungle");
 export const selectedContract:Writable<string> = writable("");
 
 // UI SETTINGS

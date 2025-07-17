@@ -147,7 +147,8 @@
             <section class="pt-4">
                 <figure class="tiny-label text-fontColor">ENVIRONMENT</figure>
                 <select bind:value={_selectedNetwork} on:change={onChangeNetwork} class="text-xs rounded bg-inputBg border-inputBorder border py-1 px-2 w-full mt-1">
-                    <option>Jungle Testnet</option>
+                    <option>Jungle</option>
+                    <option>Devnet</option>
                     <option>Use Wallet</option>
                 </select>
 

@@ -157,6 +157,13 @@ export default class ApiService {
                     if(json.data.success){
                         ConsoleService.prepend(`Interaction success!`);
                         ConsoleService.prepend(`<details><summary>Transaction: <a class="text-fontHighlight" style="color:text-decoration: underline;" href="https://jungle4.unicove.com/transaction/${json.data.data.response.transaction_id}" target="_blank">See transaction on explorer</a></summary><pre>${JSON.stringify(json.data.data, null, 4)}</pre></details>`);
+                        try {
+                            json.data.data.response.processed.action_traces.map((trace:any) => {
+                                if(trace.console && trace.console.length > 0) {
+                                    ConsoleService.prepend(`Console output: ${trace.console}`);
+                                }
+                            })
+                        } catch (e) {}
                         ConsoleService.prepend('');
                     } else {
                         ConsoleService.prepend(`Interaction failed!`);
